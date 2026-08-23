@@ -1,0 +1,21 @@
+{
+  "name": "cypress_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saenz00/Cypress_Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Saenz00/Cypress_Course/issues"
+  },
+  "homepage": "https://github.com/Saenz00/Cypress_Course#readme"
+}
