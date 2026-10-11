@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Saenz00/Cypress_Course/issues"
   },
-  "homepage": "https://github.com/Saenz00/Cypress_Course#readme"
+  "homepage": "https://github.com/Saenz00/Cypress_Course#readme",
+  "devDependencies": {
+    "cypress-iframe": "^1.0.1"
+  }
 }

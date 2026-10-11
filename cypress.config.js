@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
     // allowCypressEnv: false,
+    defaultCommandTimeout: 7000, //global timeout for all commands
   projectId: "cgotwm",
   e2e: {
     setupNodeEvents(on, config) {
