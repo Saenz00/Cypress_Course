@@ -1,3 +1,5 @@
+import cartPage from './cartPage';
+
 class productPage {
 
     pageValidation() {
@@ -19,7 +21,7 @@ class productPage {
         })
     }
 
-    gotToCart() {
+    goToCart() {
         cy.contains('a', 'Checkout').click();
         return new cartPage();
     }

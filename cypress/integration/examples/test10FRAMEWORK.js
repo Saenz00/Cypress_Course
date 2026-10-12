@@ -1,3 +1,5 @@
+import homePage from '../../support/pageObjects/homePage';
+
 describe('End to end test', function () {
 
     before(function () {
@@ -17,21 +19,14 @@ describe('End to end test', function () {
         productPage.verifyCardLimit();
         productPage.selectProduct(productname);
         productPage.selectFirstProduct();
-        const cartPage = productPage.gotToCart();
-
-        cy.get('app-card').eq(0).contains('button', 'Add').click();
-        cy.contains('a', 'Checkout').click();
-        let sum = 0
-        cy.get('tr td:nth-child(4) strong').each($el => {
-            const amount = Number($el.text().split(' ')[1].trim());
-            sum = sum + amount;
-        }).then(() => {
-            expect(sum).to.be.lessThan(200000)
+        const cartPage = productPage.goToCart();
+        cartPage.sumOfProducts().then(function (sum) {
+            expect(sum).to.be.lessThan(200000);
         })
-        cy.contains('button', 'Checkout').click();
-        cy.get('#country').type('India');
-        cy.get('.suggestions > ul > li > a').click();
-        cy.get(".btn-success").click();
-        cy.get(".alert-success").should('contain', 'Success');
+
+        const confirmationPage = cartPage.checkoutItems();
+        confirmationPage.submitFormDetails();
+        confirmationPage.getAlertMessage().should('contain', 'Success');
+
     })
 })
