@@ -13,7 +13,8 @@ describe('End to end test', function () {
         Cypress.defaultCommandTimeout = 8000; //local timeout for this test
         
         const productname = this.data.productname;
-        this.homePage.goTo('https://rahulshettyacademy.com/loginpagePractise/#/');
+        this.homePage.goTo(Cypress.env('url')+"/loginpagePractise/#/");
+
         const productPage = this.homePage.login(this.data.username, this.data.password);
         productPage.pageValidation();
         productPage.verifyCardLimit();

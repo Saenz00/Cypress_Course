@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Saenz00/Cypress_Course#readme",
   "devDependencies": {
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^5.0.0",
+    "mochawesome": "^8.1.1"
   }
 }

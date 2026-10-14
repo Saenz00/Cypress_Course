@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T05:35:21.233Z",
+    "end": "2026-10-14T05:35:42.936Z",
+    "duration": 21703,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "59ded01a-3984-4134-8a5f-b961ef75c9bd",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\test10FRAMEWORK.js",
+      "file": "cypress\\integration\\examples\\test10FRAMEWORK.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "42c94f31-83a6-4d70-9922-f70b6fe22fb4",
+          "title": "End to end test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Submit order",
+              "fullTitle": "End to end test Submit order",
+              "timedOut": null,
+              "duration": 18209,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.defaultCommandTimeout = 8000; //local timeout for this test\nconst productname = this.data.productname;\nthis.homePage.goTo(Cypress.env('url') + \"/loginpagePractise/#/\");\nconst productPage = this.homePage.login(this.data.username, this.data.password);\nproductPage.pageValidation();\nproductPage.verifyCardLimit();\nproductPage.selectProduct(productname);\nproductPage.selectFirstProduct();\nconst cartPage = productPage.goToCart();\ncartPage.sumOfProducts().then(function (sum) {\n  expect(sum).to.be.lessThan(200000);\n});\nconst confirmationPage = cartPage.checkoutItems();\nconfirmationPage.submitFormDetails();\nconfirmationPage.getAlertMessage().should('contain', 'Success');",
+              "err": {},
+              "uuid": "ea781118-67f5-4477-9031-009a36b68810",
+              "parentUUID": "42c94f31-83a6-4d70-9922-f70b6fe22fb4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ea781118-67f5-4477-9031-009a36b68810"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18209,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
